@@ -1,0 +1,132 @@
+/* E1.3 應用題 r2：題目區精簡；圖在上、文字逐行在下；每按一下出一項，位置預留不跳動。 */
+:root{--k-shen:#626b77;--k-she:#2454a4;--k-biao:#6d4acf;--k-lie:#c8711e;--k-jie:#17212e;--k-yan:#0f766e;--k-da:#d34b36}
+
+/* 題目區：題號是細標籤，題幹保持正常字級 */
+.layout-question.apps{padding:8px 24px 6px;gap:2px}
+.layout-question.apps .col-fit{display:block}
+.layout-question.apps .badge{display:inline-block;font-size:12px;margin:0 12px 0 0}
+.layout-question.apps .slide-title{display:inline-block;font-size:17px;font-weight:700;color:#626b77;margin:0 12px 0 0;letter-spacing:.02em}
+.layout-question.apps .points{display:block;margin:4px 0 0;max-width:1300px}
+.layout-question.apps .visual-host{align-items:flex-start}
+.layout-question.apps .pilot-panel{margin:8px auto 0}
+.layout-question.apps .slide-info{flex:0 0 auto}
+.layout-question.apps .points li{font-size:23px;line-height:1.6}
+.layout-question.apps .slide-visual{padding-top:4px}
+.layout-question.apps .vis-zoom{top:0}
+.q-toggle{font-size:13px;border:1px solid #cfd5dc;background:#fff;border-radius:3px;padding:2px 10px;color:#2454a4;cursor:pointer;font-weight:600}
+.q-toggle:hover{background:#edf2fa}
+/* 第2、3頁：原題收成一行，按「原題」展開 */
+.qfold:not(.q-open) .points{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qfold:not(.q-open) .points li{display:inline;font-size:18px;color:#4d5865;margin-right:.6em}
+
+/* 題目關鍵字：第1頁第1步起用螢光筆 */
+.qk{background-image:linear-gradient(#FFE36B,#FFE36B);background-repeat:no-repeat;background-position:0 88%;background-size:0% 46%}
+.keys-on .qk{background-size:100% 46%}
+
+/* 七步條 */
+.step-bar{display:flex;gap:6px;align-items:center}
+.sb{width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#a3aab3;border:1.5px solid #d6dade;background:#fff}
+.sb.on{color:#fff;border-color:transparent}
+.sb.on[data-k="審"]{background:var(--k-shen)}.sb.on[data-k="設"]{background:var(--k-she)}.sb.on[data-k="表"]{background:var(--k-biao)}.sb.on[data-k="列"]{background:var(--k-lie)}.sb.on[data-k="解"]{background:var(--k-jie)}.sb.on[data-k="驗"]{background:var(--k-yan)}.sb.on[data-k="答"]{background:var(--k-da)}
+.apps-panel{max-width:1220px;width:100%}
+.apps-panel .step-count{margin:0}
+.sp-head{display:flex;justify-content:space-between;align-items:center;min-height:36px;margin-bottom:6px}
+.aw-bar{min-height:34px}
+.sp-carry{font-size:18px;color:#4d5865;border-left:4px solid #2454a4;padding:3px 12px;margin:0 0 8px;text-align:left;background:#f5f7fa}
+
+/* 逐項頁 */
+.sp [data-step]{visibility:hidden}
+.sp [data-step].on{visibility:visible}
+.sp-fig{height:230px;display:flex;justify-content:center;align-items:center;gap:24px;margin-bottom:6px}
+.visual-host .sp-fig svg{width:auto;height:100%;max-width:100%;max-height:none}
+.sp-list{display:flex;flex-direction:column;gap:8px;max-width:1080px;margin:0 auto;width:100%}
+.sp-item{display:flex;align-items:center;gap:12px;text-align:left;min-height:42px}
+.sp-body{font-size:23px;line-height:1.7;color:#17212e}
+.sp-join{display:inline}
+.lbl{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.1em;color:#fff;background:#626b77;border-radius:3px;padding:2px 8px;margin-right:4px}
+.lbl.find{background:#d34b36}.lbl.eq{background:#c8711e}.lbl.try{background:#2454a4}
+.eq-line{display:inline-flex;align-items:center;gap:10px}
+.eq-math{font-size:27px;color:#2454a4}
+.aside{font-size:19px;color:#626b77}
+
+.nbox{vertical-align:middle;margin:0 18px;display:inline-flex;flex-direction:column;align-items:center;gap:2px;border:2.5px solid #2454a4;border-radius:6px;padding:4px 18px;min-width:110px;transform-origin:center}
+.nbox small{font-size:13px;color:#626b77;line-height:1.3}.nbox span{font-size:28px;color:#2454a4;line-height:1.3}
+.tr-row{display:inline-flex;align-items:center;gap:12px}
+.tr-chip{font-size:21px;background:#FFF3B8;border-radius:4px;padding:3px 10px;white-space:nowrap}
+.visual-host svg.tr-arrow{width:80px;height:22px;flex:0 0 auto;display:inline-block}
+.tr-math{font-size:27px;color:#2454a4}
+.visual-host svg.bar-model{width:440px;height:auto;display:inline-block}
+.visual-host svg.rope-bar{width:460px;height:auto;display:inline-block}
+.pop{transform-box:fill-box;transform-origin:center}
+
+/* 售價表：每一行是一步 */
+.pt{display:flex;flex-direction:column}
+.pt-row{display:grid;grid-template-columns:repeat(4,150px) 260px;font-variant-numeric:tabular-nums}
+.pt-row>span{text-align:center;padding:3px 6px;border-bottom:1px solid #e0e4e9;font-size:22px}
+.pt-head>span{font-size:14px;font-weight:700;color:#626b77;border-bottom:2px solid #17212e}
+.pt-x .pt-row>span{color:#6d4acf;background:#f4f0fd;font-size:22px}
+.pt-live .pt-row>span{color:#2454a4;font-weight:600}
+.pt-live.hit .pt-row>span{background:#dff1ed;color:#0f766e}
+
+/* 試一試 */
+.ictrl.inline{vertical-align:middle}
+.ictrl.inline{display:inline-flex;margin:0;gap:8px}
+.presets{display:inline-flex;gap:6px;margin-left:6px}
+.pbtn.mini{font-size:13px;min-height:28px;padding:3px 10px}
+.live-msg{display:block;font-size:20px;color:#3d4753;margin-top:4px}
+.live-msg small{font-size:17px;color:#626b77}
+.verdict{font-weight:700;display:inline-block;transform-origin:left center}
+.verdict.ok,.ok-tag{color:#0f766e}.verdict.no{color:#d34b36}
+.ok-tag{font-weight:700;display:inline-block;transform-origin:center}
+
+/* 頁1：七步卡 */
+.ss-flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;width:100%}
+.ss-card{visibility:hidden;display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 6px 14px;border-top:4px solid #d6dade;text-align:center}
+.ss-card.shown{visibility:visible}
+.ss-card b{font-size:46px;line-height:1;display:inline-block;transform-origin:center}
+.ss-card span{font-size:20px;font-weight:700;color:#17212e}
+.ss-card small{font-size:15px;line-height:1.45;color:#626b77}
+.ss-card.now{background:#f5f7fa}
+.ss-card[data-k="審"]{border-color:var(--k-shen)}.ss-card[data-k="審"] b{color:var(--k-shen)}
+.ss-card[data-k="設"]{border-color:var(--k-she)}.ss-card[data-k="設"] b{color:var(--k-she)}
+.ss-card[data-k="表"]{border-color:var(--k-biao)}.ss-card[data-k="表"] b{color:var(--k-biao)}
+.ss-card[data-k="列"]{border-color:var(--k-lie)}.ss-card[data-k="列"] b{color:var(--k-lie)}
+.ss-card[data-k="解"]{border-color:var(--k-jie)}.ss-card[data-k="解"] b{color:var(--k-jie)}
+.ss-card[data-k="驗"]{border-color:var(--k-yan)}.ss-card[data-k="驗"] b{color:var(--k-yan)}
+.ss-card[data-k="答"]{border-color:var(--k-da)}.ss-card[data-k="答"] b{color:var(--k-da)}
+.ss-groups{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;width:100%;visibility:hidden;margin-top:12px}
+.ss-groups.shown{visibility:visible}
+.ss-groups span{font-size:16px;font-weight:700;text-align:center;padding:6px 0;border-radius:3px;color:#fff}
+.ss-groups .g1{grid-column:1/5;background:var(--k-lie)}.ss-groups .g2{grid-column:5/6;background:var(--k-jie)}.ss-groups .g3{grid-column:6/8;background:var(--k-yan)}
+.ss-detail{min-height:3.4em;font-size:22px;line-height:1.6;color:#3d4753;text-align:left;margin:14px 0 0;max-width:1100px}
+.ss-detail b{margin-right:14px}
+.ss-detail b[data-k="審"]{color:var(--k-shen)}.ss-detail b[data-k="設"]{color:var(--k-she)}.ss-detail b[data-k="表"]{color:var(--k-biao)}.ss-detail b[data-k="列"]{color:var(--k-lie)}.ss-detail b[data-k="解"]{color:var(--k-jie)}.ss-detail b[data-k="驗"]{color:var(--k-yan)}.ss-detail b[data-k="答"]{color:var(--k-da)}
+.ss-detail .g1c{color:var(--k-lie);margin:0}.ss-detail .g3c{color:var(--k-yan);margin:0}
+
+/* 解題行：所有行先佔位，按一下才出現，「=」位置不變 */
+.aw-cols{display:grid;gap:44px;width:max-content;max-width:none;margin:0 auto;align-items:start}
+.aw-cols.cols-2{grid-template-columns:max-content minmax(360px,500px)}
+.aw-col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.aw-grid{display:grid;grid-template-columns:40px auto 28px auto;column-gap:8px;row-gap:6px;align-items:center}
+.aw-row{display:contents;visibility:hidden}
+.aw-row.shown{visibility:visible}
+.aw-row>*{font-size:27px;line-height:1.45;color:#17212e}
+.aw-l{text-align:right}.aw-eq{text-align:center}.aw-r{text-align:left;white-space:nowrap}
+.aw-h{grid-column:2/5;text-align:left;font-size:22px!important;line-height:1.55!important}
+.aw-note{font-size:15px;color:#7a828c;margin-left:14px}
+.aw-k{flex:0 0 32px;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px!important;font-weight:700;color:#fff!important;align-self:center}
+.aw-k:not([data-k]){background:transparent}
+.aw-k[data-k="審"]{background:var(--k-shen)}.aw-k[data-k="設"]{background:var(--k-she)}.aw-k[data-k="表"]{background:var(--k-biao)}.aw-k[data-k="列"]{background:var(--k-lie)}.aw-k[data-k="解"]{background:var(--k-jie)}.aw-k[data-k="驗"]{background:var(--k-yan)}.aw-k[data-k="答"]{background:var(--k-da)}
+.aw-row.answer .aw-h{color:#d34b36;font-weight:600}
+.aw-trap{visibility:hidden;margin:8px 0 0;max-width:520px}
+.aw-trap.shown{visibility:visible}
+.aw-trap li{font-size:18px}
+
+@media(max-height:780px) and (min-width:901px){.layout-question.apps .points li{font-size:20px}.sp-fig{height:190px}.sp-body{font-size:20px}.eq-math,.tr-math{font-size:24px}.aw-row>*{font-size:23px}.aw-h{font-size:19px!important}.ss-card b{font-size:38px}.ss-card span{font-size:18px}.ss-detail{font-size:19px}.pt-row>span{font-size:19px}}
+@media(max-width:900px){.ss-flow,.ss-groups{grid-template-columns:repeat(4,minmax(0,1fr))}.ss-groups .g1,.ss-groups .g2,.ss-groups .g3{grid-column:auto}}
+
+
+/* 練習頁的題目附圖：放在解題欄上方 */
+.aw-fig{display:flex;justify-content:center;margin:0 0 8px}
+.visual-host .aw-fig svg{height:130px;width:auto;max-width:100%}
+.visual-host .aw-fig.short svg{height:84px}

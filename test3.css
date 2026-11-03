@@ -1,0 +1,66 @@
+/* Test 3 review: worked rows aligned on "=", 思路／常見失分 cards, mark tags, option checks. */
+.layout-question.t3 .points li{font-size:22px;line-height:1.6}
+.mc-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px;margin-top:6px;font-size:22px}
+.mc-options b{color:#626b77;font-weight:600;margin-right:6px}
+.t3-content{min-height:300px;gap:14px;justify-content:flex-start}
+
+.wgrid{display:grid;grid-template-columns:max-content;justify-content:center;gap:4px;width:100%}
+.wrow{position:relative;overflow:hidden;padding:2px 0 6px}
+.wrow-in{display:grid;grid-template-columns:minmax(220px,auto) 34px minmax(220px,auto) 210px;align-items:center;column-gap:10px;font-size:31px;line-height:1.45;color:#17212e;text-align:left}
+.wl{text-align:right}.weq{text-align:center}.wr{text-align:left}
+.wrow.span .wrow-in{grid-template-columns:minmax(474px,auto) 210px}
+.wl-full{text-align:left}
+.wnote,.mark{justify-self:start}
+.wnote{font-size:17px;color:#7a828c;grid-column:4}
+.wrow.span .wnote{grid-column:2}
+.wrow-in .mark{grid-column:4}.wrow.span .wrow-in .mark{grid-column:2}
+.wrow-in .wnote+.mark{display:none}
+.setting .wrow-in{font-size:22px;color:#626b77}
+.aside .wrow-in{color:#5a6a85;font-size:27px}
+.answer .wrow-in{color:#d34b36}
+.answer b{font-size:1.15em}
+.mask-line{position:absolute;left:10%;right:10%;bottom:0;height:4px;border-radius:2px;background:#e8735f;transform:scaleX(0);transform-origin:center}
+
+.mark{display:none;font-size:15px;font-weight:700;letter-spacing:.02em;color:#0f766e;border:1.5px solid #0f766e;border-radius:3px;padding:1px 7px;line-height:1.4;white-space:nowrap}
+.marks-on .mark{display:inline-block}
+.marks-on .wrow-in .wnote+.mark{display:inline-block;margin-left:110px}
+
+.card-chip{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.12em;color:#fff;background:#2454a4;border-radius:3px;padding:3px 10px;transform-origin:center}
+.card-chip.trap{background:#d34b36}
+.think-card{text-align:left;border-top:2px solid #2454a4;padding:12px 0 6px;width:100%}
+.think-cells{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:10px}
+.think-cells small{display:block;font-size:14px;color:#7a828c;letter-spacing:.1em}
+.think-cells p{font-size:21px;line-height:1.55;margin:4px 0 0;color:#17212e}
+.trap-card{text-align:left;border-top:2px solid #d34b36;padding:10px 0 2px;width:100%;max-width:1000px;margin:6px auto 0}
+.trap-card ul{margin:8px 0 0;padding-left:1.2em}.trap-card li{font-size:20px;line-height:1.6;color:#17212e}
+.hl{background-image:linear-gradient(#FFE36B,#FFE36B);background-repeat:no-repeat;background-position:0 88%;background-size:100% 46%;padding:0 2px}
+
+.opt-checks{display:flex;flex-direction:column;gap:12px;width:100%;max-width:1120px;margin:0 auto}
+.opt-check{display:grid;grid-template-columns:40px minmax(330px,auto) 1fr 40px;align-items:center;gap:18px;text-align:left;padding:10px 0;border-bottom:1px solid #e0e4e9}
+.opt-key{font-size:26px;font-weight:700;color:#626b77}
+.opt-eq{font-size:25px}
+.opt-why{font-size:20px;line-height:1.55;color:#3d4753}
+.opt-mark{font-size:32px;font-weight:700;text-align:center}
+.opt-check.no .opt-mark{color:#d34b36}.opt-check.ok .opt-mark{color:#0f766e}.opt-check.ok .opt-key{color:#0f766e}
+
+.count-box{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:10px}
+.count-box small{font-size:16px;color:#7a828c}
+.count-num{font-size:64px;font-weight:700;color:#2454a4;font-variant-numeric:tabular-nums;display:inline-block;transform-origin:left center}
+.count-num.landed{color:#c8711e}
+.count-num.inline{font-size:1em;transform-origin:center}
+.pair-list{font-size:22px;color:#4d5865;margin:0 0 10px;min-height:1.6em;text-align:left}
+.relationship .wgrid{justify-content:start}
+.relationship .wrow-in{font-size:24px;grid-template-columns:auto 90px}
+.relationship .wrow.span .wrow-in{grid-template-columns:auto 90px}
+.relationship .wrow-in .mark{grid-column:2}
+.relationship{text-align:left}
+.math-picture .ictrl{margin-top:8px}
+
+@media(max-height:780px) and (min-width:901px){.wrow-in{font-size:26px}.aside .wrow-in{font-size:23px}.setting .wrow-in{font-size:19px}.think-cells p{font-size:18px}.trap-card li{font-size:17px}.opt-eq{font-size:21px}.opt-why{font-size:17px}.count-num{font-size:48px}.mc-options{font-size:19px}.layout-question.t3 .points li{font-size:19px}}
+@media(max-width:900px){.wrow-in{grid-template-columns:auto 26px auto 90px;font-size:24px}.wrow.span .wrow-in{grid-template-columns:auto 90px}.think-cells{grid-template-columns:1fr;gap:10px}.opt-check{grid-template-columns:30px 1fr 30px}.opt-why{grid-column:2}.mc-options{grid-template-columns:1fr}.marks-on .wrow-in .wnote+.mark{margin-left:0}}
+.w-split{display:grid;grid-template-columns:auto minmax(260px,380px);gap:40px;align-items:center;justify-content:center;width:100%}
+.w-split .trap-card{margin:0;max-width:none}
+.w-split .wrow-in{grid-template-columns:minmax(160px,auto) 30px minmax(160px,auto) 110px}
+.w-split .wrow.span .wrow-in{grid-template-columns:minmax(350px,auto) 110px}
+.dense .wgrid{gap:0}.dense .wrow{padding:0 0 3px}.dense .wrow-in{font-size:27px;line-height:1.35}.dense .aside .wrow-in{font-size:24px}
+@media(max-height:780px) and (min-width:901px){.dense .wrow-in{font-size:23px}.dense .aside .wrow-in{font-size:21px}}
