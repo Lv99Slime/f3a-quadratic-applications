@@ -117,7 +117,32 @@
   ]];
   const p3Trap = [`分隔欄 ${M('EF')} 也用圍欄：垂直於牆的有 <span class="hl">3 條</span>。`];
 
+  // ---------- 例題1 短片：讀一句，畫一筆（直立 reel，fence-reel v1.2） ----------
+  const reelQ = ['短片重溫 (3) 例題1：每讀一句題目，圖就多畫一筆；最後由圖寫出方程。'];
+  function reelPage(h) {
+    h.innerHTML = `<div class="reel-wrap">
+      <video class="reel-video" controls playsinline preload="metadata" poster="media/fence-reel-poster.jpg" aria-label="(3) 例題1 短片：讀一句，畫一筆">
+        <source src="media/fence-reel.mp4" type="video/mp4">
+      </video>
+      <div class="reel-note">
+        <div class="reel-head">讀一句，畫一筆</div>
+        <ol>
+          <li>繩長 58 m → 先畫一條直線</li>
+          <li>圍成長方形 → 屈成四邊</li>
+          <li>一邊靠牆 → 那邊<b>不用繩</b>，58 m 只圍三邊</li>
+          <li>牆足夠長 → 平行於牆的邊沒有限制</li>
+          <li>面積 200 m² → 裏面那一格</li>
+          <li>求兩個方向的邊長 → 兩個「?」</li>
+        </ol>
+        <p class="reel-ask">看完問自己：圖上哪三樣砌成 ${M('x(58-2x)=200')}？</p>
+      </div>
+    </div>`;
+    // 空白鍵／方向鍵留給影片，不翻頁
+    h.querySelector('video').addEventListener('keydown', e => e.stopPropagation());
+  }
+
   A.insertAfter('(3) 例題1 · 解・驗・答', [
+    A.page(S, 'E1.3(3)　例題 1', '(3) 例題1 · 短片', reelQ, reelPage),
     ...tryPages(S, `${SEC}　做一做 1`, '(3) 做一做1', t1Q, t1P1, t1Rows, t1Trap),
     practice(S, `${SEC}　練習 1`, '(3) 練習1', p1Q, { cols: p1Rows, trap: p1Trap }),
     practice(S, `${SEC}　練習 2`, '(3) 練習2', p2Q, { cols: p2Rows, trap: p2Trap }),

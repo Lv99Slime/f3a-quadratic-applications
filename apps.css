@@ -130,3 +130,11 @@
 .aw-fig{display:flex;justify-content:center;margin:0 0 8px}
 .visual-host .aw-fig svg{height:130px;width:auto;max-width:100%}
 .visual-host .aw-fig.short svg{height:84px}
+
+/* (3) 例題1 短片頁：直立影片在左，「讀一句，畫一筆」對照在右 */
+.reel-wrap{display:flex;gap:36px;align-items:center;justify-content:center;width:100%}
+.reel-video{height:min(66vh,680px);aspect-ratio:9/16;background:#eef2f8;border-radius:14px;box-shadow:0 10px 30px rgba(30,42,68,.14)}
+.reel-note{max-width:580px;text-align:left}
+.reel-head{font-size:30px;font-weight:900;color:#c8711e;margin-bottom:10px}
+.reel-note ol{margin:0;padding-left:1.4em;font-size:21px;line-height:1.75;color:#17212e}
+.reel-ask{margin:14px 0 0;font-size:20px;color:#2454a4;border-left:4px solid #2454a4;padding:4px 12px;background:#f5f7fa}
