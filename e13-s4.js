@@ -122,7 +122,21 @@
   ]];
   const p5Trap = ['每減 2 元多賣 20 kg，即每減 1 元多賣 <span class="hl">10 kg</span>。', '「九折」是原價的 90%。'];
 
+  // ---------- 例題1 短片：玩具店嘅記錄卡（16:9，f3a-toy-profit v1.0） ----------
+  const filmQ = [`短片重溫 (4) 例題1：先記兩條公式，再列表由原價、加價 1 元、2 元，歸納出加價 ${M('x')} 元。`];
+  function filmPage(h) {
+    h.innerHTML = `<div class="film-wrap">
+      <video class="film-video" controls playsinline preload="metadata" poster="media/toy-profit-poster.jpg" aria-label="(4) 例題1 短片：玩具店嘅記錄卡">
+        <source src="media/toy-profit.mp4" type="video/mp4">
+      </video>
+      <p class="film-note">每件利潤 ＝ 售價 − 成本　｜　總利潤 ＝ 每件利潤 × 銷量　→　記公式 → 列表計數 → 歸納成 ${M('x')}</p>
+    </div>`;
+    // 空白鍵／方向鍵留給影片，不翻頁
+    h.querySelector('video').addEventListener('keydown', e => e.stopPropagation());
+  }
+
   A.insertAfter('(4) 例題1 · 解・驗・答', [
+    A.page(S, 'E1.3(4)　例題 1', '(4) 例題1 · 短片', filmQ, filmPage),
     ...tryPages(S, `${SEC}　做一做 1`, '(4) 做一做1', t1Q, t1P1, t1Rows, t1Trap),
     practice(S, `${SEC}　練習 1`, '(4) 練習1', p1Q, { cols: p1Rows, trap: p1Trap }),
     practice(S, `${SEC}　練習 2`, '(4) 練習2', p2Q, { cols: p2Rows, trap: p2Trap }),
